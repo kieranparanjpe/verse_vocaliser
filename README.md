@@ -1,9 +1,10 @@
 # verse_vocaliser
-<br>
+
 ## Basic Usage
-<br>
+
 There are two scripts, AudioPitchEstimator.cs and PitchUser.cs. AudioPitchEstimator contains the functionality, and PitchUser is an example of how you could use the library.
-<br>
+
+
 # AudioPitchEstimator
 ## Properties
 
@@ -24,10 +25,6 @@ There are two scripts, AudioPitchEstimator.cs and PitchUser.cs. AudioPitchEstima
 - `AttachStreamToAudioSource()`: Attach the microphone stream to the audio source. The audio source will be the source attached to this object, or it will throw an error if there is not AudioSource on this object.
 - `AttachStreamToAudioSource(AudioSource source)`: Attach the microphone stream to the audio source. The `source` parameter specifies the AudioSource to attach to.
 - `DetachStreamFromAudioSource()`: Detach the current microphone stream from the audio source.
-
-Continuing with the rest of the code:
-
-## Methods
 
 - `EstimateFrequency(AudioSource audioSource)`: This method estimates the fundamental frequency of the input audio source. If the audio source is not playing, it returns `float.NaN`. It calculates the logarithm of the amplitude spectrum and then calculates the residual spectrum. It then calculates the score of SRH (Summation of Residual Harmonics) and records the frequency with the highest score. If the SRH score does not meet the threshold, it is considered that there is no clear fundamental frequency and returns `float.NaN`.
 
